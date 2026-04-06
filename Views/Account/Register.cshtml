@@ -1,0 +1,15 @@
+﻿@model CivicConnect.Models.User
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card p-4 shadow" style="width: 350px; border-radius:15px;">
+        <h3 class="text-center mb-3">Register</h3>
+
+        <form method="post">
+            <input asp-for="Name" class="form-control mb-2" placeholder="Name" />
+            <input asp-for="Email" class="form-control mb-2" placeholder="Email" />
+            <input asp-for="Password" type="password" class="form-control mb-3" placeholder="Password" />
+
+            <button class="btn btn-success w-100">Register</button>
+        </form>
+    </div>
+</div>

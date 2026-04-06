@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - CivicConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+
+    <!-- 🔥 NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+
+            <a class="navbar-brand text-warning fw-bold">
+                CivicConnect 🚀
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    @if (Context.Session.GetString("Role") == "Admin")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/AdminPanel">Admin Panel</a>
+                        </li>
+
+                        <!-- 🔥 ADD THIS -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Feedback/Create">💬 Feedback</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="/Account/Logout">Logout</a>
+                        </li>
+                    }
+                    
+                    else if (Context.Session.GetString("Role") == "User")
+                    {
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/UserDashboard">Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/MyComplaints">My Complaints</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/Rewards">Rewards</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="/Account/Logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Feedback/Create">💬 Feedback</a>
+</li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔥 MOST IMPORTANT LINE -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

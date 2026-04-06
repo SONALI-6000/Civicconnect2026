@@ -1,0 +1,19 @@
+﻿@model CivicConnect.Models.Complaint
+
+<div class="container mt-5">
+    <h3>Assign Department</h3>
+
+    <form method="post" action="/Admin/AssignTask">
+
+        <input type="hidden" name="id" value="@Model.Id" />
+
+        <select name="department" class="form-control mb-3">
+            <option>Sanitation</option>
+            <option>Road Maintenance</option>
+            <option>Water Supply</option>
+            <option>Electricity</option>
+        </select>
+
+        <button class="btn btn-success">Assign Task</button>
+    </form>
+</div>

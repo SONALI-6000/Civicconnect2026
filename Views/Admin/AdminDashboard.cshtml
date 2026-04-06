@@ -1,0 +1,52 @@
+﻿@model List<CivicConnect.Models.Complaint>
+
+<div class="container mt-5">
+    <h2>Admin Dashboard</h2>
+    <a href="/Account/Logout" class="btn btn-danger float-end">Logout</a>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Location</td>
+
+                    <td>
+                        @if (item.Status == "Pending")
+                        {
+                            <span class="badge bg-danger">Pending</span>
+                        }
+                        else if (item.Status == "Verified")
+                        {
+                            <span class="badge bg-primary">Verified</span>
+                        }
+                        else if (item.Status == "Rejected")
+                        {
+                            <span class="badge bg-secondary">Rejected</span>
+                        }
+                    </td>
+
+                    <td>
+                        <img src="@item.ImagePath" width="80" />
+                    </td>
+
+                    <td>
+                        <a href="/Admin/Verify/@item.Id" class="btn btn-success btn-sm">Verify</a>
+                        <a href="/Admin/Reject/@item.Id" class="btn btn-danger btn-sm">Reject</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

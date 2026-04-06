@@ -1,0 +1,45 @@
+﻿@{
+    var points = ViewBag.Points ?? 0;
+    var level = ViewBag.Level ?? "Beginner";
+    var progress = Math.Min(points, 100);
+}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Your Rewards 🎮</h2>
+
+    <!-- 🔥 LEVEL CARD -->
+    <div class="card shadow p-4 text-center">
+        <h3>@level</h3>
+        <h1 class="text-warning">@points Points</h1>
+
+        <!-- 🔥 PROGRESS BAR -->
+        <div class="progress mt-3">
+            <div class="progress-bar bg-success"
+                 style="width:@progress%">
+                @progress%
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔥 BADGES -->
+    <div class="mt-4 text-center">
+        <h4>Badges 🏅</h4>
+
+        @if (points >= 20)
+        {
+            <span class="badge bg-primary p-2 m-1">Active User</span>
+        }
+
+        @if (points >= 50)
+        {
+            <span class="badge bg-warning p-2 m-1">Top Contributor</span>
+        }
+
+        @if (points >= 100)
+        {
+            <span class="badge bg-success p-2 m-1">City Hero 🏆</span>
+        }
+    </div>
+
+</div>

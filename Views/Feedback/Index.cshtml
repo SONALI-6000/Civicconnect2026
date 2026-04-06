@@ -1,0 +1,35 @@
+﻿@model List<CivicConnect.Models.Feedback>
+
+<div class="container mt-5">
+    <h2>User Feedback</h2>
+
+    <table class="table table-bordered mt-3">
+
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Message</th>
+                <th>Rating</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.User?.Name</td>
+                    <td>@item.Message</td>
+                    <td>
+                        @for (int i = 0; i < item.Rating; i++)
+                        {
+                            <span style="color:gold;">★</span>
+                        }
+                    </td>
+                    <td>@item.CreatedAt</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

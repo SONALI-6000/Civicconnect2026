@@ -1,0 +1,165 @@
+﻿@model CivicConnect.Models.AdminDashboardViewModel
+
+<div class="container mt-4">
+
+    <h2 class="mb-4 fw-bold">Admin Dashboard</h2>
+
+    <!-- 🔥 STATS CARDS -->
+    <div class="row text-center mb-4">
+
+        <div class="col-md-4">
+            <a href="/Admin/AdminPanel" class="text-decoration-none">
+                <div class="card shadow p-3 stat-card bg-dark text-white">
+                    <h3>@Model.Total</h3>
+                    <p>Total Complaints</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/Admin/AdminPanel?filter=Pending" class="text-decoration-none">
+                <div class="card shadow p-3 stat-card bg-danger text-white">
+                    <h3>@Model.Pending</h3>
+                    <p>Pending</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/Admin/AdminPanel?filter=Resolved" class="text-decoration-none">
+                <div class="card shadow p-3 stat-card bg-success text-white">
+                    <h3>@Model.Resolved</h3>
+                    <p>Resolved</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- 🔥 COMPLAINT TABLE -->
+    <div class="card shadow p-3">
+        <h4>Manage Complaints</h4>
+
+        <table class="table table-hover mt-3">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.Complaints != null && Model.Complaints.Any())
+                {
+                    @foreach (var item in Model.Complaints)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Location</td>
+
+                            <td>
+                                @if (item.Status == "Pending")
+                                {
+                                    <span class="badge bg-danger">Pending</span>
+                                }
+                                else if (item.Status == "Verified")
+                                {
+                                    <span class="badge bg-success">Resolved</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Rejected</span>
+                                }
+                            </td>
+
+                            <td>
+                                <a href="/Admin/Verify/@item.Id" class="btn btn-success btn-sm">✔</a>
+                                <a href="/Admin/Reject/@item.Id" class="btn btn-warning btn-sm">✖</a>
+                                <a href="/Admin/Delete/@item.Id" class="btn btn-danger btn-sm">🗑</a>
+                                <a href="/Admin/MarkRead/@item.Id" class="btn btn-info btn-sm">👁</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No complaints found</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <!-- 🔥 FEEDBACK TABLE -->
+    <div class="card shadow p-3 mt-4">
+        <h4>User Feedback 💬</h4>
+
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Message</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.Feedbacks != null && Model.Feedbacks.Any())
+                {
+                    @foreach (var f in Model.Feedbacks)
+                    {
+                        <tr>
+                            <!-- 🔥 FIXED -->
+                            <td>@f.User?.Name</td>
+
+                            <td>@f.Message</td>
+
+                            <td>
+                                @for (int i = 0; i < f.Rating; i++)
+                                {
+                                    <span style="color:gold;">★</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3" class="text-center text-muted">No feedback available</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 🔥 LEADERBOARD -->
+    <div class="card shadow p-3 mt-4">
+        <h4>Leaderboard 🏆</h4>
+
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var user in Model.Users.OrderByDescending(u => u.Points))
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Points</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

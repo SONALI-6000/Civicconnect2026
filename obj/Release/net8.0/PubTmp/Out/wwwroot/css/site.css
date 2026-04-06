@@ -1,0 +1,157 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f5f7fa;
+}
+.card {
+    border-radius: 15px;
+}
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+.hero-section {
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0');
+    background-size: cover;
+    background-position: center;
+}
+
+.custom-card {
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+    .custom-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    }
+.complaint-card {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 320px; /* ?? same height */
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+    .complaint-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    }
+
+.complaint-img {
+    height: 150px; /* ?? same image size */
+    width: 100%;
+    object-fit: cover;
+}
+.hero-home {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+    background-size: cover;
+    background-position: center;
+}
+.navbar {
+    border-bottom: 2px solid #ffc107;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+#suggestions {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.stat-card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+    .stat-card:hover {
+        transform: scale(1.05);
+    }
+
+table td {
+    vertical-align: middle;
+}
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+    transition: 0.2s;
+}
+
+    .star:hover,
+    .star.active {
+        color: gold;
+    }
+.star {
+    font-size: 35px;
+    cursor: pointer;
+    color: gray;
+}
+
+    .star.active {
+        color: gold;
+    }
+.hero-section {
+    transition: 0.3s ease;
+}
+
+    .hero-section:hover {
+        transform: scale(1.02);
+    }
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.custom-card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+    .custom-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    }
