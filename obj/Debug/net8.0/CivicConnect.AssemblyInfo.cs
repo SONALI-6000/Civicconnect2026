@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CivicConnect")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bab27f05c6069dffcd4247d7fa688fd619f9ef26")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+998b5669b9987c5bbbdeed223b33f4c62a37ebaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("CivicConnect")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CivicConnect")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
