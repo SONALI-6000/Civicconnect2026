@@ -136,3 +136,5 @@ C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\refint\CivicConne
 C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\CivicConnect.pdb
 C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\CivicConnect.genruntimeconfig.cache
 C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\ref\CivicConnect.dll
+C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\CivicConnect.sourcelink.json
+C:\Users\HP\Desktop\CivicConnect\CivicConnect\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
